@@ -1,16 +1,11 @@
-(function() {
-    'use strict';
 
-    window.calc = window.calc || {};
-
-    window.calc.sum = sum;
 
     /**
      * Adds whatever numbers are provided and returns the total
      * @param  {Array} numbers  The numbers to add together
      * @return {Number}         The total of all numbers
      */
-    function sum(numbers) {
+    module.exports.sum = function sum(numbers) {
         var total = 0;
 
         if (!numbers) {
@@ -20,6 +15,7 @@
         numbers.forEach(function addThem(num) {
             total += num;
         });
+        return total
     }
 
     /**
@@ -30,9 +26,9 @@
      * @param  {Number} topNumber  The number to get the factorial value for
      * @return {Number}            The final factorial value
      */
-    function factorial(topNumber) {
+    module.exports.fact = function factorial(topNumber) {
         var i;
-        var total = 0;
+        var total = 1;
 
         if (typeof(topNumber) !== 'number') {
             return 0;
@@ -43,5 +39,3 @@
         }
         return total;
     }
-
-})();
